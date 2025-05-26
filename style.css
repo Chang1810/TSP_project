@@ -1,0 +1,216 @@
+body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0D1B2A 0%, #1B263B 100%);
+      color: #E0E0E0;
+      margin: 0;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 221, 235, 0.3);
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .left-panel {
+      width: 40%;
+      padding: 20px;
+      background: #1B263B;
+      border: 2px solid #00DDEB;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00DDEB;
+    }
+    .right-panel {
+      width: 60%;
+      padding: 20px;
+      background: #1B263B;
+      border: 2px solid #00DDEB;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #00DDEB;
+    }
+    h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00DDEB;
+      text-shadow: 0 0 5px #00DDEB, 0 0 10px #00DDEB;
+      animation: flicker 3s infinite alternate;
+      margin-top: 0;
+    }
+    #map {
+      height: 400px;
+      margin-bottom: 20px;
+      border: 2px solid #00DDEB;
+      box-shadow: 0 0 15px #00DDEB;
+      border-radius: 8px;
+    }
+    #address-list {
+      margin-bottom: 20px;
+    }
+    .address-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .address-item input {
+      flex: 1;
+      padding: 10px;
+      background: #2A3A5A;
+      border: 2px solid #00DDEB;
+      color: #E0E0E0;
+      border-radius: 4px;
+      margin-right: 10px;
+      transition: box-shadow 0.3s;
+    }
+    .address-item input:focus {
+      outline: none;
+      box-shadow: 0 0 10px #00DDEB;
+    }
+    .delete-btn {
+      background: #FF007F;
+      border: none;
+      color: #E0E0E0;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .delete-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #FF007F;
+    }
+    button:not(.delete-btn) {
+      background: linear-gradient(45deg, #00DDEB, #9B59B6);
+      border: none;
+      color: #E0E0E0;
+      padding: 12px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:not(.delete-btn):hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00DDEB;
+    }
+    #random-address {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    #random-address input {
+      width: 100px;
+      margin-right: 10px;
+      padding: 10px;
+      background: #2A3A5A;
+      border: 2px solid #00DDEB;
+      color: #E0E0E0;
+      border-radius: 4px;
+    }
+    #random-address input:focus {
+      outline: none;
+      box-shadow: 0 0 10px #00DDEB;
+    }
+    #route-order {
+      background: #2A3A5A;
+      border: 2px solid #00DDEB;
+      border-radius: 4px;
+      padding: 10px;
+      box-shadow: 0 0 10px #00DDEB;
+    }
+    #route-order h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+    #route-order ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #route-order li {
+      color: #E0E0E0;
+      font-size: 14px;
+      margin-bottom: 8px;
+      animation: fadeIn 0.5s ease-in;
+      text-shadow: 0 0 5px #00DDEB;
+    }
+    #route-order .placeholder {
+      color: #9B59B6;
+      font-style: italic;
+    }
+    #results {
+      margin: 10px 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    #comparison-table, #distance-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #1B263B;
+      border: 1px solid #00DDEB;
+    }
+    #comparison-table th, #comparison-table td,
+    #distance-table th, #distance-table td {
+      border: 1px solid #00DDEB;
+      padding: 10px;
+      text-align: center;
+      color: #E0E0E0;
+    }
+    #comparison-table th, #distance-table th {
+      background: linear-gradient(45deg, #00DDEB, #9B59B6);
+      color: #E0E0E0;
+      font-family: 'Orbitron', sans-serif;
+    }
+    #comparison-table tr:nth-child(even), #distance-table tr:nth-child(even) {
+      background: #2A3A5A;
+    }
+    #comparison-table tr:hover, #distance-table tr:hover {
+      background: #3B4A6B;
+      box-shadow: 0 0 10px #00DDEB inset;
+    }
+    .custom-marker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      background: radial-gradient(circle, #00DDEB, #0078A8);
+      color: #E0E0E0;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 50%;
+      border: 2px solid #FF007F;
+      box-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      animation: pulse 2s infinite;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB; }
+      50% { box-shadow: 0 0 15px #00DDEB, 0 0 30px #00DDEB; }
+      100% { box-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .left-panel, .right-panel {
+        width: 100%;
+      }
+      #map {
+        height: 300px;
+      }
+    }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>So sánh thuật toán TSP: Thời gian, đường đi và khoảng cách</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2> Nhập các địa chỉ</h2>
+      <div id="address-list">
+        <div class="address-item">
+          <input type="text" class="address-input" placeholder="Ví dụ: 143 Hạ Đình, Hà Nội">
+          <button class="delete-btn">Xóa</button>
+        </div>
+      </div>
+      <button onclick="addAddressInput()">Thêm địa chỉ</button>
+      <button onclick="compareAlgorithms()">So sánh thuật toán</button>
+      <div id="random-address">
+        <input type="number" id="num-addresses" min="2" placeholder="Số địa chỉ">
+        <button onclick="generateRandomAddresses()">Tạo địa chỉ ngẫu nhiên</button>
+      </div>
+      <div id="route-order">
+        <h3> Thứ tự đường đi</h3>
+        <ul>
+          <li class="placeholder">Chọn thuật toán để xem thứ tự đường đi</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-panel">
+      <h2>🗺️ Kết quả</h2>
+      <div id="map"></div>
+      <div id="results"></div>
+      <h3> Thời gian chạy (giây)</h3>
+      <table id="comparison-table">
+        <thead>
+          <tr>
+            <th>Lần chạy</th>
+            <th>Ant Colony System</th>
+            <th>Nhánh và Cận</th>
+            <th>Genetic Algorithm</th>
+            <th>Tham lam</th>
+          </tr>
+        </thead>
+        <tbody id="comparison-table-body"></tbody>
+      </table>
+      <h3> Khoảng cách (km)</h3>
+      <table id="distance-table">
+        <thead>
+          <tr>
+            <th>Lần chạy</th>
+            <th>Ant Colony System</th>
+            <th>Nhánh và Cận</th>
+            <th>Genetic Algorithm</th>
+            <th>Tham lam</th>
+          </tr>
+        </thead>
+        <tbody id="distance-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
